@@ -1,20 +1,20 @@
 package structure
 
 type LinkedListNode struct {
-	data int
-	next *LinkedListNode
+	Data int
+	Next *LinkedListNode
 }
 
 func NewLinkedListNode(data int, next *LinkedListNode) *LinkedListNode {
 	node := new(LinkedListNode)
-	node.data = data
-	node.next = next
+	node.Data = data
+	node.Next = next
 	return node
 }
 
 func InitLinkedListNode(data int) *LinkedListNode {
 	node := new(LinkedListNode)
-	node.data = data
-	node.next = nil
+	node.Data = data
+	node.Next = nil
 	return node
 }

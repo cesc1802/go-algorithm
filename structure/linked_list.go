@@ -3,15 +3,15 @@ package structure
 import "fmt"
 
 type LinkedList struct {
-	head *LinkedListNode
+	Head *LinkedListNode
 }
 
 func (l *LinkedList) InsertNodeAtHead(node *LinkedListNode) {
-	if l.head == nil {
-		l.head = node
+	if l.Head == nil {
+		l.Head = node
 	} else {
-		node.next = l.head
-		l.head = node
+		node.Next = l.Head
+		l.Head = node
 	}
 }
 
@@ -22,12 +22,12 @@ func (l *LinkedList) LinkedListFromArray(array []int) {
 	}
 }
 
-func (l *LinkedList) GetNode(head *LinkedListNode, pos int) *LinkedListNode {
+func (l *LinkedList) GetNode(Head *LinkedListNode, pos int) *LinkedListNode {
 	if pos != -1 {
 		p := 0
-		ptr := head
+		ptr := Head
 		for p < pos {
-			ptr = ptr.next
+			ptr = ptr.Next
 			p++
 		}
 		return ptr
@@ -36,11 +36,11 @@ func (l *LinkedList) GetNode(head *LinkedListNode, pos int) *LinkedListNode {
 }
 
 func (l *LinkedList) DisplayLinkedList() {
-	temp := l.head
+	temp := l.Head
 	fmt.Print("[")
 	for temp != nil {
-		fmt.Print(temp.data)
-		temp = temp.next
+		fmt.Print(temp.Data)
+		temp = temp.Next
 		if temp != nil {
 			fmt.Print(", ")
 		}
@@ -48,12 +48,12 @@ func (l *LinkedList) DisplayLinkedList() {
 	fmt.Print("]")
 }
 
-func Length(head *LinkedListNode) int {
-	temp := head
+func Length(Head *LinkedListNode) int {
+	temp := Head
 	length := 0
 	for temp != nil {
 		length++
-		temp = temp.next
+		temp = temp.Next
 	}
 	return length
 }
@@ -61,8 +61,8 @@ func Length(head *LinkedListNode) int {
 func DisplayLinkedListWithForwardArrow(l *LinkedListNode) {
 	temp := l
 	for temp != nil {
-		fmt.Print(temp.data)
-		temp = temp.next
+		fmt.Print(temp.Data)
+		temp = temp.Next
 		if temp != nil {
 			fmt.Print(" → ")
 		} else {
@@ -73,8 +73,8 @@ func DisplayLinkedListWithForwardArrow(l *LinkedListNode) {
 func DisplayLinkedListWithForwardArrowLoop(l *LinkedListNode) {
 	temp := l
 	for temp != nil {
-		fmt.Print(temp.data)
-		temp = temp.next
+		fmt.Print(temp.Data)
+		temp = temp.Next
 		if temp != nil {
 			fmt.Print(" → ")
 		}
